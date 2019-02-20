@@ -5,7 +5,6 @@ import Header from './Header';
 export default props => {
     return (
         <div>
-            <Container>
                 <Head>
                     <link
                         rel="stylesheet"
@@ -14,7 +13,6 @@ export default props => {
                 </Head>
                 <Header/>
                 { props.children }
-            </Container>
         </div>
     );
 };
