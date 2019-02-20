@@ -21,14 +21,14 @@ class SegmentExampleRaisedSegments extends React.Component{
                     <Segment.Group raised>
             <Header textAlign='center' size='huge'>All IOT Meters</Header>
             {this.state.meters.map((meter,i)=>{
-            return <Segment size='big' key={i} color='blue' textAlign='center'>{(i+1)+'. '+meter.name}</Segment>                
+            return <Segment size='big' key={i} color='blue' textAlign='center'>{(i+1)+'. '+meter.name}</Segment>
             })}
         </Segment.Group>
                     </Grid.Column>
                     <Grid.Column width={4}></Grid.Column>
                 </Grid.Row>
             </Grid>
-        
+
           );
 
     }
