@@ -4,9 +4,10 @@ import Home from '../pages/home'
 import Regulator from '../pages/regulator'
 import Device from '../pages/device'
 import Iot from '../pages/iot'
+import App from '../connection/app'
 
 export default class SidebarExampleSidebar extends Component {
-  state = {wrc:40, visible: false,indexVisible:true,iotVisible:false,deviceVisible:false,regulatorVisible:false   }
+  state = {wrc:0.001, visible: false,indexVisible:true,iotVisible:false,deviceVisible:false,regulatorVisible:false   }
 
   handleHideClick = () => this.setState({ visible: false })
   handleShowClick = () => this.setState({ visible: true })
@@ -14,10 +15,23 @@ export default class SidebarExampleSidebar extends Component {
   handleItemClick = (e, { name }) => this.setState((state)=>{
       return {activeItem: name,visible:!state.visible}
   })
-  changeWrc=(val)=>{
-    this.setState({wrc:val});
-  }
+  // changeWrc=(val)=>{
+  //   this.setState({wrc:val});
+  // }
+  componentDidMount(){
+    console.log("hello world");
+    var price = App.tokenPrice();
+    console.log("koi problemn nahi");
+    // console.log('header'+price)
+    // console.log(price);
+    var result;
+      setTimeout(function(){     var str=document.cookie;
+      result = str.split(';')[1].split(':')[1];
+     }, 3000);
+     // this.changeWrc(result)
 
+    // console.log('ascsa'+document.cookie);
+  }
   render() {
     const { visible } = this.state
     const { activeItem } = this.state
@@ -33,14 +47,14 @@ export default class SidebarExampleSidebar extends Component {
         </Menu.Item>
 
         <Menu.Item name='app'>
-         <Header as='h1'>Noncence App</Header> 
+         <Header as='h1'>Noncence App</Header>
         </Menu.Item>
 
         <Menu.Item position='right'
           name='upcomingEvents'
         >
         <Header as='h3' size='medium'>WRC Rate -: 1 WRC = {this.state.wrc} Eth</Header>
-        
+
         </Menu.Item>
       </Menu>
 

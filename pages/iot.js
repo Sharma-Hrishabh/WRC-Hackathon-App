@@ -8,8 +8,8 @@ class SegmentExampleRaisedSegments extends React.Component{
 
     handleChange = (e, { value }) => this.setState({ value })
 
-    onSubmit = () =>{
-      
+    onSubmit = () => {
+
 
     }
 

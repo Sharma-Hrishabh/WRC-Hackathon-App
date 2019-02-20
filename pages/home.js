@@ -5,13 +5,17 @@ class SegmentExampleRaisedSegments extends React.Component{
 
     state={
         meters:[{
-          name:'One Meter'
+          name:'0xd2Bd7C19D539c2F080f70Db89f6a345f6673Abe6'
         },
         {
-          name:'Two Meter'
+          name:'0x96bd37f6d369B6F3c27d1102950e8870ea68C6f4'
         }
       ]
       }
+
+    componentDidMount(){
+
+    }
     render(){
         return (
             <Grid>
