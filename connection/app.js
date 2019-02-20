@@ -111,35 +111,35 @@ module.exports = {
     });
   },
 
-  minPercentage: function(minPercentage) {
-    if(typeof web3 !== undefined) {
-        web3Provider = web3.currentProvider;
-        web3.eth.defaultAccount = web3.eth.accounts[0];
-        console.log("hii");
-    }
-    else {
-        alert("MetaMask not found! Working on localhost:7545.");
-        web3Provider = new web3.providers.HttpProvider("http://localhost:7545");
-        console.log("Hii");
-    }
-
-    web3 = new Web3(web3Provider);
-    console.log(web3.eth.defaultAccount);
-    // Bootstrap the MetaCoin abstraction for Use.
-    WRC.setProvider(web3.currentProvider);
-    var meta;
-    WRC.deployed().then(function(instance) {
-      meta = instance;
-      return meta.minPercentage();
-    }).then(function(value) {
-        //callback(value.valueOf());
-        console.log(parseInt(value));
-        alert(parseInt(value))
-        return parseInt(value)
-    }).catch(function(e) {
-        console.log(e);
-    });
-  },
+  // minPercentage: function(minPercentage) {
+  //   if(typeof web3 !== undefined) {
+  //       web3Provider = web3.currentProvider;
+  //       web3.eth.defaultAccount = web3.eth.accounts[0];
+  //       console.log("hii");
+  //   }
+  //   else {
+  //       alert("MetaMask not found! Working on localhost:7545.");
+  //       web3Provider = new web3.providers.HttpProvider("http://localhost:7545");
+  //       console.log("Hii");
+  //   }
+  //
+  //   web3 = new Web3(web3Provider);
+  //   console.log(web3.eth.defaultAccount);
+  //   // Bootstrap the MetaCoin abstraction for Use.
+  //   WRC.setProvider(web3.currentProvider);
+  //   var meta;
+  //   WRC.deployed().then(function(instance) {
+  //     meta = instance;
+  //     return meta.minPercentage();
+  //   }).then(function(value) {
+  //       //callback(value.valueOf());
+  //       console.log(parseInt(value));
+  //       alert(parseInt(value))
+  //       return parseInt(value)
+  //   }).catch(function(e) {
+  //       console.log(e);
+  //   });
+  // },
 
   tokenPrice: function(minPercentage) {
     if(typeof web3 !== undefined) {

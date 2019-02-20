@@ -7,6 +7,7 @@ class SegmentExampleRaisedSegments extends React.Component{
         lichange:{},
         ulchange:{}
     }
+
     handleWrcChange=(e)=>{
         if(!isNaN(e.target.value)){
         this.props.wrc(e.target.value);
@@ -17,11 +18,19 @@ class SegmentExampleRaisedSegments extends React.Component{
         let lichange={...this.state.lichange};
         lichange[field]=e.target.value;
         this.setState({lichange});
+        // console.log(lichange)
+
     }
     handleChangeul=(field,e)=>{
         let ulchange={...this.state.ulchange};
         ulchange[field]=e.target.value;
         this.setState({ulchange});
+    }
+
+    onSubmitli = () => {
+      var li= this.state.lichange;
+      console.log(li.ph);
+      App.defineWaterSpecsIndus(li.ph,li.solids,li.hardness,li.oil,li.bod,li.minPercentageIndus)
     }
     render(){
         return (
@@ -35,12 +44,12 @@ class SegmentExampleRaisedSegments extends React.Component{
                         pH
                         <Input placeholder='pH' onChange={(e)=>this.handleChangeli('ph',e)} />
                         </Label>
-                        <Input placeholder='solids' onChange={(e)=>this.handleChangeli('ph',e)} />
-                        <Input placeholder='hardness' onChange={(e)=>this.handleChangeli('ph',e)}/>
-                        <Input placeholder='Oil' onChange={(e)=>this.handleChangeli('ph',e)} />
-                        <Input placeholder='BoD' onChange={(e)=>this.handleChangeli('ph',e)}/>
-                        <Input placeholder='min % Recycle' onChange={(e)=>this.handleChangeli('ph',e)} />
-                        <Button primary>Primary</Button>
+                        <Input placeholder='solids' onChange={(e)=>this.handleChangeli('solids',e)} />
+                        <Input placeholder='hardness' onChange={(e)=>this.handleChangeli('hardness',e)}/>
+                        <Input placeholder='Oil' onChange={(e)=>this.handleChangeli('oil',e)} />
+                        <Input placeholder='BoD' onChange={(e)=>this.handleChangeli('bod',e)}/>
+                        <Input placeholder='min % Recycle' onChange={(e)=>this.handleChangeli('minPercentageIndus',e)} />
+                        <Button primary onClick={this.onSubmitli}>Primary</Button>
 
                     </Grid.Column>
                     <Grid.Column width='5'>

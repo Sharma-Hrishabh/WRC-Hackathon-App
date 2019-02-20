@@ -29,7 +29,7 @@ contract WRCTokenSale {
         tokensSold += _numberOfTokens;
         emit Sell(msg.sender, _numberOfTokens);
     }
-    
+
     function transferToSale(uint256 _numberOfTokens) public payable{
         // require(tokenContract.balanceOf[msg.sender] >= _numberOfTokens);
         // tokenContract.transfers(admin , _numberOfTokens);
@@ -38,12 +38,12 @@ contract WRCTokenSale {
         tokenContract.updateBalance(msg.sender, 0,  _numberOfTokens);
     }
 
-    
+
     function transferToBuyer(address _a, uint256 _numberOfTokens) public payable{
         // require(tokenContract.balanceOf[msg.sender] >= _numberOfTokens);
         tokenContract.transfers(_a, _numberOfTokens);
     }
-    
+
     // function endSale() public {
     //     require(msg.sender == admin);
     //     require(tokenContract.transfer(address(admin), tokenContract.balanceOf(address(this))));
