@@ -1,12 +1,18 @@
 import React from 'react'
 import { Segment, Header,Form,Radio,Grid,Input,Button } from 'semantic-ui-react'
+import App from '../connection/app'
 
 class SegmentExampleRaisedSegments extends React.Component{
 
     state = {value:'1'}
 
     handleChange = (e, { value }) => this.setState({ value })
-    
+
+    onSubmit = () =>{
+      
+
+    }
+
     render(){
         return (
             <Grid>
@@ -56,7 +62,7 @@ class SegmentExampleRaisedSegments extends React.Component{
                             <Grid.Row textAlign='center'>
                             <Grid.Column width='4'></Grid.Column>
                                 <Grid.Column width='8'>
-                                    <Input placeholder='Maximum Acceptable Volume' fluid />                                    
+                                    <Input placeholder='Maximum Acceptable Volume' fluid />
                                 </Grid.Column>
                             <Grid.Column width='4'></Grid.Column>
                             </Grid.Row>
@@ -65,7 +71,7 @@ class SegmentExampleRaisedSegments extends React.Component{
                             <Grid.Row textAlign='center'>
                             <Grid.Column width='4'></Grid.Column>
                                 <Grid.Column width='8'>
-                                    <Button primary>Submit</Button>                                  
+                                    <Button primary onClick={this.onSubmit}>Submit</Button>
                                 </Grid.Column>
                             <Grid.Column width='4'></Grid.Column>
                             </Grid.Row>
@@ -76,7 +82,7 @@ class SegmentExampleRaisedSegments extends React.Component{
                     <Grid.Column width='2'></Grid.Column>
                 </Grid.Row>
             </Grid>
-            
+
           );
     }
 }
