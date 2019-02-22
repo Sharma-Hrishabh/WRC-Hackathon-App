@@ -199,14 +199,16 @@ module.exports = {
     WRCTokenSale.deployed().then(function(instance) {
       meta = instance;
       var price = meta.tokenPrice()
-      // console.log(price);
-      // web3.utils.fromWei(price,'ether');
+      // console.log("1",price);
+
       return price;
     }).then(function(value) {
-        //callback(value.valueOf());
-        console.log('sdc')
-        console.log(parseInt(value));
-        document.cookie = "key:" + parseInt(value);
+      // var x = web3.utils.fromWei(value.toString(),'ether');
+        // console.log("2",x)
+            var x= parseInt(value)/1000000000000000000;
+            console.log(parseInt(value)/1000000000000000000);
+            document.querySelector('h3').innerHTML='<h3>1 WRC = '+x+' ETH</h3>';
+        // document.cookie = "key:" + parseInt(value);
 
         // alert(parseInt(value)/1000000000000000000)
         return parseInt(value);

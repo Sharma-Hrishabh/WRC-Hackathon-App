@@ -14,7 +14,7 @@ contract WRC {
         string reportedAt;
 
     }
-
+    address[] public authorisedIOTs;
     struct waterQuality {
         uint pH;
         uint solids;
@@ -57,6 +57,7 @@ contract WRC {
     function addIOTDevice(address _meterID,address _orgID,string memory _meterType,string memory _reportedAt) public {
         require(msg.sender == regulator);
         IOTInfo[_meterID]=IOTDevice(_orgID,_meterType,_reportedAt);
+        authorisedIOTs.push(_meterID);
     }
 
     //adding Readings of a device

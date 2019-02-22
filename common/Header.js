@@ -19,15 +19,13 @@ export default class SidebarExampleSidebar extends Component {
   //   this.setState({wrc:val});
   // }
   componentDidMount(){
-    console.log("hello world");
     var price = App.tokenPrice();
-    console.log("koi problemn nahi");
     // console.log('header'+price)
     // console.log(price);
-    var result;
-      setTimeout(function(){     var str=document.cookie;
-      result = str.split(';')[1].split(':')[1];
-     }, 3000);
+    // var result;
+    //   setTimeout(function(){     var str=document.cookie;
+    //   result = str.split(';')[1].split(':')[1];
+    //  }, 3000);
      // this.changeWrc(result)
 
     // console.log('ascsa'+document.cookie);
