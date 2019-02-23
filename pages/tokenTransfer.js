@@ -14,7 +14,7 @@ class SegmentExampleRaisedSegments extends React.Component{
         this.setState({sale});
     }
     handleChangeindustry=(field,e)=>{
-        let industry={...this.state.sale};
+        let industry={...this.state.industry};
         industry[field]=e.target.value;
         this.setState({industry});
     }
@@ -25,7 +25,10 @@ class SegmentExampleRaisedSegments extends React.Component{
     }
 
     onSubmitToIndustry = () => {
-      
+      var industry = this.state.industry;
+      console.log(industry.address);
+      App.transferToIndustry(industry.address,industry.number)
+
     }
     render(){
         return (
@@ -53,7 +56,7 @@ class SegmentExampleRaisedSegments extends React.Component{
                                 <Grid.Column width={12} textAlign='center'>
                                     <Header textAlign='center' size='large'>Transfer token to industry</Header>
                                     <Input style={{margin:'10px'}} fluid placeholder='Industry contract Address' onChange={(e)=>this.handleChangeindustry('address',e)} />
-                                    <Input style={{margin:'10px'}} fluid placeholder='Number of Tokens' onChange={(e)=>this.handleChangesaleindustry('number',e)} />
+                                    <Input style={{margin:'10px'}} fluid placeholder='Number of Tokens' onChange={(e)=>this.handleChangeindustry('number',e)} />
                                     <Button style={{margin:'10px'}} onClick={this.onSubmitToIndustry} secondary inverted>Make Transaction</Button>
                                 </Grid.Column>
                                 <Grid.Column width={2}></Grid.Column>
