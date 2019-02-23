@@ -1,28 +1,46 @@
 import React from 'react'
 import { Segment, Header, Grid, Input,Label, Button } from 'semantic-ui-react'
-
+import App from '../connection/app';
 class SegmentExampleRaisedSegments extends React.Component{
 
     state={
         lichange:{},
         ulchange:{}
     }
-    handleWrcChange=(e)=>{
 
+    componentDidMount(){
+      // var price=App.tokenPrice();
+      // console.log(price);
+    }
+
+    handleWrcChange=(e)=>{
         if(!isNaN(e.target.value)){
         this.props.wrc(e.target.value);
     }
 }
-    
+
     handleChangeli=(field,e)=>{
         let lichange={...this.state.lichange};
         lichange[field]=e.target.value;
         this.setState({lichange});
+        // console.log(lichange)
+
     }
     handleChangeul=(field,e)=>{
         let ulchange={...this.state.ulchange};
         ulchange[field]=e.target.value;
         this.setState({ulchange});
+    }
+
+    onSubmitli = () => {
+      var li= this.state.lichange;
+      console.log(li.ph);
+      App.defineWaterSpecsIndus(li.ph,li.solids,li.hardness,li.oil,li.bod,li.minPercentageIndus)
+    }
+    onSubmitul = () => {
+      var ul= this.state.lichange;
+      console.log(ul.ph);
+      App.defineWaterSpecsLocal(ul.ph,ul.soulds,ul.hardness,ul.oil,ul.bod,ul.minPercentageLocal)
     }
     render(){
         return (

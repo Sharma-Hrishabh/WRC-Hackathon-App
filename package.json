@@ -28,6 +28,7 @@
   "dependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
+    "big-number": "^2.0.0",
     "body-parser": "^1.18.2",
     "dotenv": "^6.2.0",
     "eth-dagger": "0.0.4",
