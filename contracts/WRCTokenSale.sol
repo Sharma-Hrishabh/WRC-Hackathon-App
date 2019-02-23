@@ -1,3 +1,5 @@
+pragma solidity >= 0.4.23;
+import './WRCToken.sol';
 contract WRCTokenSale {
     address admin;
     WRCToken public tokenContract;
@@ -24,7 +26,7 @@ contract WRCTokenSale {
         tokensSold += _numberOfTokens;
         emit Sell(msg.sender, _numberOfTokens);
     }
-    
+
     function transferToSale(uint256 _numberOfTokens) public payable returns(bool){
         // require(tokenContract.balanceOf[msg.sender] >= _numberOfTokens);
         // tokenContract.transfers(admin , _numberOfTokens);
@@ -34,20 +36,17 @@ contract WRCTokenSale {
         return true;
     }
 
-    
+
     function transferToBuyer(address _a, uint256 _numberOfTokens) public payable returns(bool){
         // require(tokenContract.balanceOf[msg.sender] >= _numberOfTokens);
         tokenContract.transfers(_a, _numberOfTokens);
         return true;
     }
-    
+
     function destroyUsed(uint256 _valueToDestroy) public returns(bool){
         // updating token spent to zero.
         tokenContract.updateBalance(msg.sender, 0, _valueToDestroy);
-        
+
         return true;
-    } 
+    }
 }
-
-
-
