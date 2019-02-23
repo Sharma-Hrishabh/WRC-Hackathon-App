@@ -18,7 +18,7 @@ class SegmentExampleRaisedSegments extends React.Component{
     }
     render(){
         return (
-            <Grid>
+            <Grid stackable>
                 <Grid.Row>
                     <Grid.Column width={4}></Grid.Column>
                     <Grid.Column width={8}>

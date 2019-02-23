@@ -47,33 +47,107 @@ class SegmentExampleRaisedSegments extends React.Component{
         <Segment.Group raised>
             <Header size='huge' textAlign='center'>Regulator Dashboard</Header>
             <Grid>
-                <Grid.Row>
+                <Grid.Row textAlign='center'>
                     <Grid.Column width='5'>
                         <Header size='large' textAlign='center'>Large Industries</Header>
-                        <Label color='red' horizontal>
-                        pH
-                        <Input placeholder='pH' onChange={(e)=>this.handleChangeli('ph',e)} />
-                        </Label>
-                        <Input placeholder='solids' onChange={(e)=>this.handleChangeli('solids',e)} />
-                        <Input placeholder='hardness' onChange={(e)=>this.handleChangeli('hardness',e)}/>
-                        <Input placeholder='Oil' onChange={(e)=>this.handleChangeli('oil',e)} />
-                        <Input placeholder='BoD' onChange={(e)=>this.handleChangeli('bod',e)}/>
-                        <Input placeholder='min % Recycle' onChange={(e)=>this.handleChangeli('minPercentageIndus',e)} />
-                        <Button primary onClick={this.onSubmitli}>Submit</Button>
+                        <Grid >
+                            <Grid.Row textAlign='center'>
+                                <Grid.Column width={2}></Grid.Column>
+                                <Grid.Column width={12}>
+                                <Input fluid style={{margin:'10px'}} placeholder='pH' onChange={(e)=>this.handleChangeli('ph',e)} />                        
+                                </Grid.Column>
+                                <Grid.Column width={2}></Grid.Column>
+                            </Grid.Row>
+                            <Grid.Row textAlign='center'>
+                                <Grid.Column width={2}></Grid.Column>
+                                <Grid.Column width={12}>
+                                <Input fluid style={{margin:'10px'}} placeholder='Solids' onChange={(e)=>this.handleChangeli('sd',e)} />                        
+                                </Grid.Column>
+                                <Grid.Column width={2}></Grid.Column>
+                            </Grid.Row>
+                            <Grid.Row textAlign='center'>
+                            <Grid.Column width={2}></Grid.Column>
+                                <Grid.Column width={12}>
+                                <Input fluid style={{margin:'10px'}} placeholder='Hardness' onChange={(e)=>this.handleChangeli('hd',e)} />                        
+                                </Grid.Column>
+                                <Grid.Column width={2}></Grid.Column>
+                            </Grid.Row>
+                            <Grid.Row>
+                            <Grid.Column width={2}></Grid.Column>
+                                <Grid.Column width={12}>
+                                <Input fluid style={{margin:'10px'}} placeholder='Oil' onChange={(e)=>this.handleChangeli('ol',e)} />                        
+                                </Grid.Column>
+                                <Grid.Column width={2}></Grid.Column>
+                            </Grid.Row>
+                            <Grid.Row>
+                            <Grid.Column width={2}></Grid.Column>
+                                <Grid.Column width={12}>
+                                <Input fluid style={{margin:'10px'}} placeholder='BoD' onChange={(e)=>this.handleChangeli('bd',e)} />                        
+                                </Grid.Column>
+                                <Grid.Column width={2}></Grid.Column>
+                            </Grid.Row>
+                            <Grid.Row>
+                            <Grid.Column width={2}></Grid.Column>
+                                <Grid.Column width={12}>
+                                <Input fluid style={{margin:'10px'}} placeholder='Min % Recycle' onChange={(e)=>this.handleChangeli('mn',e)} />                        
+                                </Grid.Column>
+                                <Grid.Column width={2}></Grid.Column>
+                            </Grid.Row>
+                        </Grid>
+                        
+                        
+                        <Button inverted primary>Submit</Button>
 
                     </Grid.Column>
                     <Grid.Column width='5'>
-                    <Header size='large' textAlign='center'>Urban Local Bodies</Header>
-                    <Label color='red' horizontal>
-                    pH
-                    <Input placeholder='pH' onChange={(e)=>this.handleChangeul('ph',e)} />
-                    </Label>
-                    <Input placeholder='solids' onChange={(e)=>this.handleChangeul('solids',e)} />
-                    <Input placeholder='hardness' onChange={(e)=>this.handleChangeul('hardness',e)}/>
-                    <Input placeholder='Oil' onChange={(e)=>this.handleChangeul('oil',e)} />
-                    <Input placeholder='BoD' onChange={(e)=>this.handleChangeul('bod',e)}/>
-                    <Input placeholder='min % Recycle' onChange={(e)=>this.handleChangeul('minPercentageLocal',e)} />
-                    <Button primary onClick={this.onSubmitul}>Submit</Button>
+                        <Header size='large' textAlign='center'>Large Industries</Header>
+                        <Grid >
+                            <Grid.Row textAlign='center'>
+                                <Grid.Column width={2}></Grid.Column>
+                                <Grid.Column width={12}>
+                                <Input fluid style={{margin:'10px'}} placeholder='pH' onChange={(e)=>this.handleChangeul('ph',e)} />                        
+                                </Grid.Column>
+                                <Grid.Column width={2}></Grid.Column>
+                            </Grid.Row>
+                            <Grid.Row textAlign='center'>
+                                <Grid.Column width={2}></Grid.Column>
+                                <Grid.Column width={12}>
+                                <Input fluid style={{margin:'10px'}} placeholder='Solids' onChange={(e)=>this.handleChangeul('sd',e)} />                        
+                                </Grid.Column>
+                                <Grid.Column width={2}></Grid.Column>
+                            </Grid.Row>
+                            <Grid.Row textAlign='center'>
+                            <Grid.Column width={2}></Grid.Column>
+                                <Grid.Column width={12}>
+                                <Input fluid style={{margin:'10px'}} placeholder='Hardness' onChange={(e)=>this.handleChangeul('hd',e)} />                        
+                                </Grid.Column>
+                                <Grid.Column width={2}></Grid.Column>
+                            </Grid.Row>
+                            <Grid.Row>
+                            <Grid.Column width={2}></Grid.Column>
+                                <Grid.Column width={12}>
+                                <Input fluid style={{margin:'10px'}} placeholder='Oil' onChange={(e)=>this.handleChangeul('ol',e)} />                        
+                                </Grid.Column>
+                                <Grid.Column width={2}></Grid.Column>
+                            </Grid.Row>
+                            <Grid.Row>
+                            <Grid.Column width={2}></Grid.Column>
+                                <Grid.Column width={12}>
+                                <Input fluid style={{margin:'10px'}} placeholder='BoD' onChange={(e)=>this.handleChangeul('bd',e)} />                        
+                                </Grid.Column>
+                                <Grid.Column width={2}></Grid.Column>
+                            </Grid.Row>
+                            <Grid.Row>
+                            <Grid.Column width={2}></Grid.Column>
+                                <Grid.Column width={12}>
+                                <Input fluid style={{margin:'10px'}} placeholder='Min % Recycle' onChange={(e)=>this.handleChangeul('mn',e)} />                        
+                                </Grid.Column>
+                                <Grid.Column width={2}></Grid.Column>
+                            </Grid.Row>
+                        </Grid>
+                        
+                        
+                        <Button inverted primary>Submit</Button>
 
                     </Grid.Column>
                     <Grid.Column width='6'>
