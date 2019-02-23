@@ -45,7 +45,7 @@ contract WRCTokenSale {
 
     function destroyUsed(uint256 _valueToDestroy) public returns(bool){
         // updating token spent to zero.
-        tokenContract.updateBalance(msg.sender, 0, _valueToDestroy);
+        tokenContract.updateBalance(address(this), 0, _valueToDestroy);
 
         return true;
     }

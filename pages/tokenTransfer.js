@@ -20,6 +20,11 @@ class SegmentExampleRaisedSegments extends React.Component{
         // var tokenInSale = App.tokensInSale().then(val=>val).then(val=>val.toString());
         // console.log(tokenInSale,'asd');
         // this.setState({tokenBncSale:tokenInSale});
+        let getTotalVal=async ()=>{
+          let value=await App.tokensTotal();
+          this.setState({tokenBnc:value.toNumber()})
+        }
+        getTotalVal();
       }
 
     handleChangesale=(field,e)=>{
@@ -43,6 +48,11 @@ class SegmentExampleRaisedSegments extends React.Component{
       console.log(industry.address);
       App.transferToIndustry(industry.address,industry.number)
 
+    }
+    onSubmitDestroy = () => {
+      var amount = this.state.tokenBncSale;
+
+      App.burnTokens(amount);
     }
     render(){
         return (
@@ -75,7 +85,7 @@ class SegmentExampleRaisedSegments extends React.Component{
                                     <Input style={{margin:'10px'}} fluid placeholder='Industry contract Address' onChange={(e)=>this.handleChangeindustry('address',e)} />
                                     <Input style={{margin:'10px'}} fluid placeholder='Number of Tokens' onChange={(e)=>this.handleChangeindustry('number',e)} />
                                     <Button style={{margin:'10px'}} onClick={this.onSubmitToIndustry} secondary inverted>Make Transaction</Button>
-                                    <Button style={{margin:'10px'}} secondary inverted>Destroy Remaining</Button>
+                                    <Button style={{margin:'10px'}} onClick={this.onSubmitDestroy} secondary inverted>Destroy Remaining</Button>
                                 </Grid.Column>
                                 <Grid.Column width={2}></Grid.Column>
                             </Grid.Row>

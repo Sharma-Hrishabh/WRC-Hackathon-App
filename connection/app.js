@@ -345,6 +345,66 @@ module.exports = {
     });
   },
 
+  tokensTotal: function() {
+    if(typeof web3 !== undefined) {
+        web3Provider = web3.currentProvider;
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+        console.log("hii");
+    }
+    else {
+        alert("MetaMask not found! Working on localhost:7545.");
+        web3Provider = new web3.providers.HttpProvider("http://localhost:7545");
+        console.log("Hii");
+    }
+
+    web3 = new Web3(web3Provider);
+    WRCToken.setProvider(web3.currentProvider);
+    var meta;
+    return WRCToken.deployed().then(function(instance) {
+      meta = instance;
+      var price = meta.totalSupply();
+      // console.log("1",price);
+
+      return price;
+    }).then(function(value) {
+            var x= parseInt(value);
+            console.log(x,'totalSupply');
+            // document.querySelector('h3').innerHTML='<h3>1 WRC = '+x+' ETH</h3>';
+
+        return value;
+    }).catch(function(e) {
+        // console.log(e);
+    });
+  },
+
+  burnTokens: function(amount) {
+    if(typeof web3 !== undefined) {
+        web3Provider = web3.currentProvider;
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+        console.log("hii");
+    }
+    else {
+        alert("MetaMask not found! Working on localhost:7545.");
+        web3Provider = new web3.providers.HttpProvider("http://localhost:7545");
+        console.log("Hii");
+    }
+
+    web3 = new Web3(web3Provider);
+    console.log(web3.eth.defaultAccount);
+    // Bootstrap the MetaCoin abstraction for Use.
+    WRCTokenSale.setProvider(web3.currentProvider);
+    var meta;
+    WRCTokenSale.deployed().then(function(instance) {
+      meta = instance;
+      return meta.destroyUsed(amount, {from: web3.eth.defaultAccount});
+    }).then(function(value) {
+        //callback(value.valueOf());
+        console.log(value);
+    }).catch(function(e) {
+        // console.log(e);
+    });
+  },
+
 
 
 }
