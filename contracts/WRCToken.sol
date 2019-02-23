@@ -1,7 +1,4 @@
-pragma solidity >=0.4.24;
-
 contract WRCToken{
-  
   
   
   string public name = "WRC Token";
@@ -21,14 +18,32 @@ contract WRCToken{
     totalSupply = _initialSupply;  
   }
 
-
-  function transfers(address _to, uint256 _value) public returns (bool success){
+    function transferADMIN(address _to, uint256 _value) external returns (bool success){
+      
+        require(totalSupply >= _value);
+        
+        // balanceOf[msg.sender] -= _value;
+        balanceOf[_to] += _value; 
+        
+        // if(msg.sender == address(this)){
+            totalSupply -= _value;
+         
+      
+        emit Transfer(msg.sender, _to, _value);
+        
+        return true;
+      }
+  
+  function transfers(address _to, uint256 _value) external returns (bool success){
   
     require(balanceOf[msg.sender] >= _value);
     
     balanceOf[msg.sender] -= _value;
     balanceOf[_to] += _value; 
-
+    
+    // if(msg.sender == address(this)){
+        totalSupply -= _value;
+     
   
     emit Transfer(msg.sender, _to, _value);
     
