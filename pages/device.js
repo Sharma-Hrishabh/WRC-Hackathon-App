@@ -3,15 +3,7 @@ import { Segment, Header, Grid,Button,Input } from 'semantic-ui-react'
 
 class SegmentExampleRaisedSegments extends React.Component{
 
-    state={
-        meters:[{
-          name:'One Meter'
-        },
-        {
-          name:'Two Meter'
-        }
-      ]
-      }
+    state={}
     render(){
         return (
             <Grid>
@@ -44,11 +36,11 @@ class SegmentExampleRaisedSegments extends React.Component{
                         </Grid>
                         <Grid>
                             <Grid.Row textAlign='center'>
-                            <Grid.Column></Grid.Column>
-                            <Grid.Column>
-                                <Button primary>Primary</Button>
+                            <Grid.Column width={2}></Grid.Column>
+                            <Grid.Column width={12} textAlign='center'>
+                                <Button primary inverted>Check</Button>
                             </Grid.Column>
-                            <Grid.Column></Grid.Column>
+                            <Grid.Column width={2}></Grid.Column>
                             </Grid.Row>
                         </Grid>
                     </Segment.Group>

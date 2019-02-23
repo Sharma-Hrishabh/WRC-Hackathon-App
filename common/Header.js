@@ -4,9 +4,13 @@ import Home from '../pages/home'
 import Regulator from '../pages/regulator'
 import Device from '../pages/device'
 import Iot from '../pages/iot'
+import Token from '../pages/tokenTransfer'
+import { fail } from 'assert';
+
+
 
 export default class SidebarExampleSidebar extends Component {
-  state = {wrc:40, visible: false,indexVisible:true,iotVisible:false,deviceVisible:false,regulatorVisible:false   }
+  state = {wrc:40, visible: false,indexVisible:true,iotVisible:false,deviceVisible:false,regulatorVisible:false ,tokenTransfer:false  }
 
   handleHideClick = () => this.setState({ visible: false })
   handleShowClick = () => this.setState({ visible: true })
@@ -55,21 +59,25 @@ export default class SidebarExampleSidebar extends Component {
             visible={visible}
             width='thin'
           >
-            <Menu.Item as='a' onClick={()=>{this.setState({visible:false,indexVisible:true,iotVisible:false,deviceVisible:false,regulatorVisible:false})}}>
+            <Menu.Item as='a' onClick={()=>{this.setState({visible:false,indexVisible:true,iotVisible:false,deviceVisible:false,regulatorVisible:false,tokenTransfer:false })}}>
               <Icon name='home' />
               Home
             </Menu.Item>
-            <Menu.Item as='a' onClick={()=>{this.setState({visible:false,indexVisible:false,iotVisible:true,deviceVisible:false,regulatorVisible:false})}}>
+            <Menu.Item as='a' onClick={()=>{this.setState({visible:false,indexVisible:false,iotVisible:true,deviceVisible:false,regulatorVisible:false,tokenTransfer:false })}}>
               <Icon name='microchip' />
               IOT Anamoly
             </Menu.Item>
-            <Menu.Item as='a' onClick={()=>{this.setState({visible:false,indexVisible:false,iotVisible:false,deviceVisible:true,regulatorVisible:false})}}>
+            <Menu.Item as='a' onClick={()=>{this.setState({visible:false,indexVisible:false,iotVisible:false,deviceVisible:true,regulatorVisible:false,tokenTransfer:false })}}>
               <Icon name='shield alternate' />
               Device Authentication
             </Menu.Item>
-            <Menu.Item as='a' onClick={()=>{this.setState({visible:false,indexVisible:false,iotVisible:false,deviceVisible:false,regulatorVisible:true})}}>
+            <Menu.Item as='a' onClick={()=>{this.setState({visible:false,indexVisible:false,iotVisible:false,deviceVisible:false,regulatorVisible:true,tokenTransfer:false })}}>
               <Icon name='user secret' />
               Regulator
+            </Menu.Item>
+            <Menu.Item as='a' onClick={()=>{this.setState({visible:false,indexVisible:false,iotVisible:false,deviceVisible:false,regulatorVisible:false,tokenTransfer:true })}}>
+              <Icon name='indent' />
+              Token Transfer
             </Menu.Item>
           </Sidebar>
 
@@ -79,6 +87,7 @@ export default class SidebarExampleSidebar extends Component {
               {this.state.iotVisible && <Iot/>}
               {this.state.deviceVisible && <Device/>}
               {this.state.regulatorVisible && <Regulator wrc={(val)=>this.changeWrc(val)}/>}
+              {this.state.tokenTransfer && <Token/>}
             </Segment>
           </Sidebar.Pusher>
         </Sidebar.Pushable>
