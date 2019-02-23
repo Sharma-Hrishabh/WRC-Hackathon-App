@@ -82,4 +82,10 @@ contract WRC {
 
     }
 
+    function getauthorisedIOTs() public returns(address[] memory)
+    {
+        return authorisedIOTs;
+
+    }
+
 }

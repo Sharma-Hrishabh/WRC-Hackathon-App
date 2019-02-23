@@ -23,7 +23,7 @@ export default class SidebarExampleSidebar extends Component {
   //   this.setState({wrc:val});
   // }
   componentDidMount(){
-    var price = App.tokenPrice();
+    App.tokenPrice();
     // console.log('header'+price)
     // console.log(price);
     // var result;
