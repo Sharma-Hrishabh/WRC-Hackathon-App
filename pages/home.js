@@ -25,6 +25,7 @@ class SegmentExampleRaisedSegments extends React.Component{
                     <Grid.Column width={8}>
                     <Segment.Group raised>
             <Header textAlign='center' size='huge'>All IOT Meters</Header>
+            <Header textAlign='center' size='small'>Device IDs</Header>
             {this.state.meters.map((meter,i)=>{
             return <Segment size='big' key={i} color='blue' textAlign='center'>{(i+1)+'. '+meter.name}</Segment>
             })}
