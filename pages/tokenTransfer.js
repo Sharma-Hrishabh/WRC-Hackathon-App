@@ -11,6 +11,17 @@ class SegmentExampleRaisedSegments extends React.Component{
         tokenBncSale:0
       }
 
+      componentDidMount(){
+        let getVal=async ()=>{
+          let val=await App.tokensInSale();
+          this.setState({tokenBncSale:val.toNumber()})
+        }
+        getVal();
+        // var tokenInSale = App.tokensInSale().then(val=>val).then(val=>val.toString());
+        // console.log(tokenInSale,'asd');
+        // this.setState({tokenBncSale:tokenInSale});
+      }
+
     handleChangesale=(field,e)=>{
         let sale={...this.state.sale};
         sale[field]=e.target.value;
