@@ -19,9 +19,9 @@ export default class SidebarExampleSidebar extends Component {
   handleItemClick = (e, { name }) => this.setState((state)=>{
       return {activeItem: name,visible:!state.visible}
   })
-  // changeWrc=(val)=>{
-  //   this.setState({wrc:val});
-  // }
+  changeWrc=(val)=>{
+    this.setState({wrc:val});
+  }
   componentDidMount(){
     App.tokenPrice();
     // console.log('header'+price)
