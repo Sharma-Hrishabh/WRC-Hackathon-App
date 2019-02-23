@@ -1,6 +1,6 @@
 import React from 'react'
 import { Segment, Header, Grid, Input,Label, Button } from 'semantic-ui-react'
-import App from '../connection/app';
+const App =require('../connection/app');
 class SegmentExampleRaisedSegments extends React.Component{
 
     state={

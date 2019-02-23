@@ -192,7 +192,6 @@ module.exports = {
     }
 
     web3 = new Web3(web3Provider);
-    console.log(web3.eth.defaultAccount);
     // Bootstrap the MetaCoin abstraction for Use.
     WRCTokenSale.setProvider(web3.currentProvider);
     var meta;
@@ -206,7 +205,6 @@ module.exports = {
       // var x = web3.utils.fromWei(value.toString(),'ether');
         // console.log("2",x)
             var x= parseInt(value)/1000000000000000000;
-            console.log(parseInt(value)/1000000000000000000);
             document.querySelector('h3').innerHTML='<h3>1 WRC = '+x+' ETH</h3>';
         // document.cookie = "key:" + parseInt(value);
 
@@ -221,30 +219,24 @@ module.exports = {
     if(typeof web3 !== undefined) {
         web3Provider = web3.currentProvider;
         web3.eth.defaultAccount = web3.eth.accounts[0];
-        console.log("hii");
     }
     else {
         alert("MetaMask not found! Working on localhost:7545.");
         web3Provider = new web3.providers.HttpProvider("http://localhost:7545");
-        console.log("Hii");
     }
-
     web3 = new Web3(web3Provider);
-    console.log(web3.eth.defaultAccount);
-    // Bootstrap the MetaCoin abstraction for Use.
-    WRC.setProvider(web3.currentProvider);
     var meta;
     WRC.deployed().then(function(instance) {
       meta = instance;
-      var IOTs = meta.getauthorisedIOTs()
-      // console.log("1",price);
-
+      console.log('hello');
+      var IOTs =  meta.getauthorisedIOTs()
+      console.log(IOTs);
       return IOTs;
     }).then(function(value) {
-        console.log(value);
-        return parseInt(value);
+      console.log(value);
+        return value;
     }).catch(function(e) {
-        // console.log(e);
+        console.log(e);
     });
   },
 

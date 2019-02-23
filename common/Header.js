@@ -6,7 +6,7 @@ import Device from '../pages/device'
 import Iot from '../pages/iot'
 import Token from '../pages/tokenTransfer'
 import { fail } from 'assert';
-import App from '../connection/app'
+const App =require('../connection/app');
 
 
 
