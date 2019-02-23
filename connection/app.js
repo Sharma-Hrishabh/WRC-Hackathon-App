@@ -241,9 +241,62 @@ module.exports = {
   },
 
 
+  transferToSale: function(saleaddress,numberOfTokens) {
+    if(typeof web3 !== undefined) {
+        web3Provider = web3.currentProvider;
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+        console.log("hii");
+    }
+    else {
+        alert("MetaMask not found! Working on localhost:7545.");
+        web3Provider = new web3.providers.HttpProvider("http://localhost:7545");
+        console.log("Hii");
+    }
 
+    web3 = new Web3(web3Provider);
+    console.log(web3.eth.defaultAccount);
+    // Bootstrap the MetaCoin abstraction for Use.
+    WRCToken.setProvider(web3.currentProvider);
+    var meta;
+    WRCToken.deployed().then(function(instance) {
+      meta = instance;
+      console.log(saleaddress,'asc',numberOfTokens)
+      return meta.transferADMIN(saleaddress,numberOfTokens, {from: web3.eth.defaultAccount});
+    }).then(function(value) {
+        //callback(value.valueOf());
+        console.log(value);
+    }).catch(function(e) {
+        // console.log(e);
+    });
+  },
 
+  transferToIndustry: function(saleaddress,numberOfTokens) {
+    if(typeof web3 !== undefined) {
+        web3Provider = web3.currentProvider;
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+        console.log("hii");
+    }
+    else {
+        alert("MetaMask not found! Working on localhost:7545.");
+        web3Provider = new web3.providers.HttpProvider("http://localhost:7545");
+        console.log("Hii");
+    }
 
-
+    web3 = new Web3(web3Provider);
+    console.log(web3.eth.defaultAccount);
+    // Bootstrap the MetaCoin abstraction for Use.
+    WRCToken.setProvider(web3.currentProvider);
+    var meta;
+    WRCToken.deployed().then(function(instance) {
+      meta = instance;
+      console.log(saleaddress,'csa',numberOfTokens)
+      return meta.transfers(saleaddress,numberOfTokens, {from: web3.eth.defaultAccount});
+    }).then(function(value) {
+        //callback(value.valueOf());
+        console.log(value);
+    }).catch(function(e) {
+        // console.log(e);
+    });
+  },
 
 }
