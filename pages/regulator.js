@@ -49,7 +49,7 @@ class SegmentExampleRaisedSegments extends React.Component{
             <Header size='huge' textAlign='center'>Regulator Dashboard</Header>
             <Grid>
                 <Grid.Row textAlign='center'>
-                    <Grid.Column width='5'>
+                    <Grid.Column width='8'>
                         <Header size='large' textAlign='center'>Large Industries</Header>
                         <Grid >
                             <Grid.Row textAlign='center'>
@@ -100,8 +100,8 @@ class SegmentExampleRaisedSegments extends React.Component{
                         <Button onClick={this.onSubmitli} inverted primary>Submit</Button>
 
                     </Grid.Column>
-                    <Grid.Column width='5'>
-                        <Header size='large' textAlign='center'>Large Industries</Header>
+                    <Grid.Column width='8'>
+                        <Header size='large' textAlign='center'>Urban Local Bodies</Header>
                         <Grid >
                             <Grid.Row textAlign='center'>
                                 <Grid.Column width={2}></Grid.Column>
@@ -150,10 +150,6 @@ class SegmentExampleRaisedSegments extends React.Component{
 
                         <Button onClick={this.onSubmitul} inverted primary>Submit</Button>
 
-                    </Grid.Column>
-                    <Grid.Column width='6'>
-                    <Header size='large' textAlign='center'>WRC Rate</Header>
-                    <Input placeholder='Search...' onChange={this.handleWrcChange} />
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
