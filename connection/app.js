@@ -211,35 +211,35 @@ module.exports = {
         // alert(parseInt(value)/1000000000000000000)
         return parseInt(value);
     }).catch(function(e) {
-        console.log(e);
-    });
-  },
-
-  getauthorisedIOTs: function() {
-    if(typeof web3 !== undefined) {
-        web3Provider = web3.currentProvider;
-        web3.eth.defaultAccount = web3.eth.accounts[0];
-    }
-    else {
-        alert("MetaMask not found! Working on localhost:7545.");
-        web3Provider = new web3.providers.HttpProvider("http://localhost:7545");
-    }
-    web3 = new Web3(web3Provider);
-    var meta;
-    WRC.deployed().then(function(instance) {
-      meta = instance;
-      console.log('hello');
-      var IOTs =  meta.getauthorisedIOTs()
-      console.log(IOTs);
-      return IOTs;
-    }).then(function(value) {
-      console.log(value);
-        return value;
-    }).catch(function(e) {
         // console.log(e);
     });
   },
 
+  // getauthorisedIOTs: function() {
+  //   if(typeof web3 !== undefined) {
+  //       web3Provider = web3.currentProvider;
+  //       web3.eth.defaultAccount = web3.eth.accounts[0];
+  //   }
+  //   else {
+  //       alert("MetaMask not found! Working on localhost:7545.");
+  //       web3Provider = new web3.providers.HttpProvider("http://localhost:7545");
+  //   }
+  //   web3 = new Web3(web3Provider);
+  //   var meta;
+  //   WRC.deployed().then(function(instance) {
+  //     meta = instance;
+  //     console.log('hello');
+  //     var IOTs =  meta.getauthorisedIOTs()
+  //     console.log(IOTs);
+  //     return IOTs;
+  //   }).then(function(value) {
+  //     console.log(value);
+  //       return value;
+  //   }).catch(function(e) {
+  //       // console.log(e);
+  //   });
+  // },
+  //
 
   transferToSale: function(saleaddress,numberOfTokens) {
     if(typeof web3 !== undefined) {
@@ -400,6 +400,36 @@ module.exports = {
     }).then(function(value) {
         //callback(value.valueOf());
         console.log(value);
+    }).catch(function(e) {
+        // console.log(e);
+    });
+  },
+  //for iots
+  getauthorisedIOTs: function() {
+    if(typeof web3 !== undefined) {
+        web3Provider = web3.currentProvider;
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+        console.log("hii");
+    }
+    else {
+        alert("MetaMask not found! Working on localhost:7545.");
+        web3Provider = new web3.providers.HttpProvider("http://localhost:7545");
+        console.log("Hii");
+    }
+
+    web3 = new Web3(web3Provider);
+    WRC.setProvider(web3.currentProvider);
+    var meta;
+    return WRC.deployed().then(function(instance) {
+      meta = instance;
+      var price = meta.getauthorisedIOTs();
+      // console.log("1",price);
+
+      return price;
+    }).then(function(value) {
+            console.log(value,'IOTs');
+            // document.querySelector('h3').innerHTML='<h3>1 WRC = '+x+' ETH</h3>';
+        return value;
     }).catch(function(e) {
         // console.log(e);
     });

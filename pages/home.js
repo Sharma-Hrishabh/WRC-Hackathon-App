@@ -8,14 +8,25 @@ class SegmentExampleRaisedSegments extends React.Component{
         meters:[{
           name:'0xd2Bd7C19D539c2F080f70Db89f6a345f6673Abe6'
         },
-        {
-          name:'0x96bd37f6d369B6F3c27d1102950e8870ea68C6f4'
-        }
       ]
       }
 
     componentDidMount(){
-      let result=App.getauthorisedIOTs()
+      let getVal=async ()=>{
+        let val=await App.getauthorisedIOTs();
+        // this.setState({meters:[...this.state.meters,val]})
+        console.log(val,'state');
+        var newArr=[];
+        val.map(IOT => {
+          var json = {};
+          json['name']=IOT;
+          newArr.push(json);
+        })
+        console.log(newArr,'new');
+        this.setState({meters:newArr})
+
+      }
+      getVal();
     }
     render(){
         return (
