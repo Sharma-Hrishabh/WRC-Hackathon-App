@@ -96,12 +96,12 @@ module.exports = {
     if(typeof web3 !== undefined) {
         web3Provider = web3.currentProvider;
         web3.eth.defaultAccount = web3.eth.accounts[0];
-        console.log("hii");
+        // console.log("hii");
     }
     else {
         alert("MetaMask not found! Working on localhost:7545.");
         web3Provider = new web3.providers.HttpProvider("http://localhost:7545");
-        console.log("Hii");
+        // console.log("Hii");
     }
 
     web3 = new Web3(web3Provider);
@@ -116,7 +116,7 @@ module.exports = {
         //callback(value.valueOf());
         console.log(value);
     }).catch(function(e) {
-        console.log(e);
+        // console.log(e);
     });
   },
 

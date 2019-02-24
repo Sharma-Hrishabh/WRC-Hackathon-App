@@ -46,7 +46,6 @@ contract WRCToken{
     // if(msg.sender == address(this)){
         totalSupply -= _value;
 
-
     emit Transfer(msg.sender, _to, _value);
 
     return true;
