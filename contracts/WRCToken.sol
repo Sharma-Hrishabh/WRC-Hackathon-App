@@ -43,8 +43,8 @@ contract WRCToken{
     balanceOf[msg.sender] -= _value;
     balanceOf[_to] += _value;
 
-    // if(msg.sender == address(this)){
-        totalSupply -= _value;
+    /* // if(msg.sender == address(this)){
+        totalSupply -= _value; */
 
     emit Transfer(msg.sender, _to, _value);
 

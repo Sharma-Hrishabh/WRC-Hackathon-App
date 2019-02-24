@@ -6,7 +6,7 @@ class SegmentExampleRaisedSegments extends React.Component{
 
     state={
         meters:[{
-          name:'0xd2Bd7C19D539c2F080f70Db89f6a345f6673Abe6'
+          // name:'0xd2Bd7C19D539c2F080f70Db89f6a345f6673Abe6'
         },
       ]
       }

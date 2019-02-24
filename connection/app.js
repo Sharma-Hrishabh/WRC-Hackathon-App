@@ -215,31 +215,7 @@ module.exports = {
     });
   },
 
-  // getauthorisedIOTs: function() {
-  //   if(typeof web3 !== undefined) {
-  //       web3Provider = web3.currentProvider;
-  //       web3.eth.defaultAccount = web3.eth.accounts[0];
-  //   }
-  //   else {
-  //       alert("MetaMask not found! Working on localhost:7545.");
-  //       web3Provider = new web3.providers.HttpProvider("http://localhost:7545");
-  //   }
-  //   web3 = new Web3(web3Provider);
-  //   var meta;
-  //   WRC.deployed().then(function(instance) {
-  //     meta = instance;
-  //     console.log('hello');
-  //     var IOTs =  meta.getauthorisedIOTs()
-  //     console.log(IOTs);
-  //     return IOTs;
-  //   }).then(function(value) {
-  //     console.log(value);
-  //       return value;
-  //   }).catch(function(e) {
-  //       // console.log(e);
-  //   });
-  // },
-  //
+
 
   transferToSale: function(saleaddress,numberOfTokens) {
     if(typeof web3 !== undefined) {
@@ -285,12 +261,12 @@ module.exports = {
     web3 = new Web3(web3Provider);
     console.log(web3.eth.defaultAccount);
     // Bootstrap the MetaCoin abstraction for Use.
-    WRCToken.setProvider(web3.currentProvider);
+    WRCTokenSale.setProvider(web3.currentProvider);
     var meta;
-    WRCToken.deployed().then(function(instance) {
+    WRCTokenSale.deployed().then(function(instance) {
       meta = instance;
       console.log(saleaddress,'csa',numberOfTokens)
-      return meta.transfers(saleaddress,numberOfTokens, {from: web3.eth.defaultAccount});
+      return meta.transferToBuyer(saleaddress,numberOfTokens, {from: web3.eth.defaultAccount});
     }).then(function(value) {
         //callback(value.valueOf());
         console.log(value);

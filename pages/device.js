@@ -59,7 +59,7 @@ class SegmentExampleRaisedSegments extends React.Component{
                             <Grid.Row textAlign='center'>
                             <Grid.Column width={2}></Grid.Column>
                             <Grid.Column width={12} textAlign='center'>
-                                <Button primary inverted onClick={this.onSubmit}>Check</Button>
+                                <Button primary inverted onClick={this.onSubmit}>Authorise</Button>
                             </Grid.Column>
                             <Grid.Column width={2}></Grid.Column>
                             </Grid.Row>
