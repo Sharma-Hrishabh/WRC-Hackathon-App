@@ -241,6 +241,7 @@ module.exports = {
     }).then(function(value) {
         //callback(value.valueOf());
         console.log(value);
+        // document.location.refresh();
     }).catch(function(e) {
         // console.log(e);
     });
@@ -269,6 +270,7 @@ module.exports = {
       return meta.transferToBuyer(saleaddress,numberOfTokens, {from: web3.eth.defaultAccount});
     }).then(function(value) {
         //callback(value.valueOf());
+        // document.location.refresh();
         console.log(value);
     }).catch(function(e) {
         // console.log(e);
@@ -288,25 +290,25 @@ module.exports = {
 
     web3 = new Web3(web3Provider);
     // Bootstrap the MetaCoin abstraction for Use.
-    var saleInstance;
+    var saleInstanceAddress;
     WRCTokenSale.setProvider(web3.currentProvider);
     var meta;
     WRCTokenSale.deployed().then(function(instance) {
       meta = instance;
-      var price = meta.address
-      // console.log("1",price);
-      return price;
+      var addrs = meta.address
+      // console.log("1",addrs);
+      return addrs;
     }).then(function(value) {
-        saleInstance = value;
+        saleInstanceAddress = value;
         return value;
     })
-    console.log(saleInstance);
+    console.log(saleInstanceAddress);
 
     WRCToken.setProvider(web3.currentProvider);
     var meta;
     return WRCToken.deployed().then(function(instance) {
       meta = instance;
-      var price = meta.returnBalance(saleInstance)
+      var price = meta.returnBalance(saleInstanceAddress)
       // console.log("1",price);
 
       return price;
@@ -317,7 +319,7 @@ module.exports = {
 
         return value;
     }).catch(function(e) {
-        console.log(e);
+        // console.log(e);
     });
   },
 

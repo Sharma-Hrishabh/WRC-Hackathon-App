@@ -14,7 +14,11 @@ class SegmentExampleRaisedSegments extends React.Component{
       componentDidMount(){
         let getVal=async ()=>{
           let val=await App.tokensInSale();
-          this.setState({tokenBncSale:val.toNumber()})
+          val=val?val.toNumber():this.state.tokenBncSale;
+          this.setState({tokenBncSale:val})
+          let value=await App.tokensTotal();
+          value=value?value.toNumber():this.state.tokenBnc;
+          this.setState({tokenBnc:value})
         }
         getVal();
         // var tokenInSale = App.tokensInSale().then(val=>val).then(val=>val.toString());
