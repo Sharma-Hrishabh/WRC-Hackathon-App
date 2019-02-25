@@ -10,13 +10,13 @@ class SegmentExampleRaisedSegments extends React.Component{
 
     onSubmit = () => {
         if(this.state.value==1){
-            this.setState({inpValue:'234'})
+            this.setState({inpValue:'2395.1007865793226 L'})
         }
         if(this.state.value==2){
-            this.setState({inpValue:'334 L'})
+            this.setState({inpValue:'2395.1427183063956 L'})
         }
         if(this.state.value==3){
-            this.setState({inpValue:'235'})
+            this.setState({inpValue:'2395.186529302786 L'})
         }
 
     }

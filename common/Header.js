@@ -50,7 +50,7 @@ export default class SidebarExampleSidebar extends Component {
         </Menu.Item>
 
         <Menu.Item name='app'>
-         <Header as='h1' style={{color:'white'}}>Noncence App</Header>
+         <Header as='h1' style={{color:'white'}}>Water Wizard</Header>
         </Menu.Item>
 
         <Menu.Item position='right'
