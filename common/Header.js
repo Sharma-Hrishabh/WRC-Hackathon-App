@@ -39,23 +39,23 @@ export default class SidebarExampleSidebar extends Component {
     const { activeItem } = this.state
     return (
       <div>
-        <Menu style={{color:'violet'}}>
+        <Menu inverted color='blue'>
         <Menu.Item
           name='list'
           active={activeItem === 'editorials'}
           onClick={this.handleItemClick}
         >
-          <Icon name='list'/>
+          <Icon style={{color:'white'}} name='list'/>
         </Menu.Item>
 
         <Menu.Item name='app'>
-         <Header as='h1'>Noncence App</Header>
+         <Header as='h1' style={{color:'white'}}>Noncence App</Header>
         </Menu.Item>
 
         <Menu.Item position='right'
           name='upcomingEvents'
         >
-        <Header as='h3' size='medium'>WRC Rate -: 1 WRC = {this.state.wrc} Eth</Header>
+        <Header as='h3' style={{color:'white'}} size='medium'>WRC Rate -: 1 WRC = {this.state.wrc} Eth</Header>
 
         </Menu.Item>
       </Menu>

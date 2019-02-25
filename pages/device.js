@@ -1,5 +1,5 @@
 import React from 'react'
-import { Segment, Header, Grid,Button,Input } from 'semantic-ui-react'
+import { Segment, Header, Grid,Button,Input,Divider } from 'semantic-ui-react'
 const App =require('../connection/app');
 class SegmentExampleRaisedSegments extends React.Component{
 
@@ -33,6 +33,7 @@ class SegmentExampleRaisedSegments extends React.Component{
                     <Grid.Column width='12'>
                     <Segment.Group raised style={{padding:'50px'}}>
                         <Header textAlign='center' size='huge'>Device Authentication</Header>
+                        <Divider></Divider>
                         <Grid>
                             <Grid.Row>
                                 <Grid.Column>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Segment, Header,Form,Radio,Grid,Input,Button } from 'semantic-ui-react'
+import { Segment, Header,Form,Radio,Grid,Input,Button, Divider } from 'semantic-ui-react'
 const App =require('../connection/app');
 
 class SegmentExampleRaisedSegments extends React.Component{
@@ -21,8 +21,9 @@ class SegmentExampleRaisedSegments extends React.Component{
                     <Grid.Column width='12'>
                     <Segment.Group raised style={{padding:'50px'}}>
                         <Header textAlign='center' size='huge'>IOT Anamoly</Header>
+                        <Divider></Divider>
                         <Grid textAlign='center'>
-                            <Grid.Row columns='3' divided style={{fontSize:'40px',fontWeight:'700'}}>
+                            <Grid.Row columns='3' divided >
                                 <Grid.Column>
                                 <Form.Field>
                                     <Radio
@@ -31,6 +32,7 @@ class SegmentExampleRaisedSegments extends React.Component{
                                         value='1'
                                         checked={this.state.value === '1'}
                                         onChange={this.handleChange}
+                                        style={{fontSize:'25px',fontWeight:'500',lineHeight:'23px'}}
                                     />
                                 </Form.Field>
                                 </Grid.Column>
@@ -42,6 +44,7 @@ class SegmentExampleRaisedSegments extends React.Component{
                                         value='2'
                                         checked={this.state.value === '2'}
                                         onChange={this.handleChange}
+                                        style={{fontSize:'25px',fontWeight:'500',lineHeight:'23px'}}
                                     />
                                 </Form.Field>
                                 </Grid.Column>
@@ -53,6 +56,7 @@ class SegmentExampleRaisedSegments extends React.Component{
                                         value='3'
                                         checked={this.state.value === '3'}
                                         onChange={this.handleChange}
+                                        style={{fontSize:'25px',fontWeight:'500',lineHeight:'23px'}}
                                     />
                                     </Form.Field>
                                 </Grid.Column>
@@ -71,7 +75,7 @@ class SegmentExampleRaisedSegments extends React.Component{
                             <Grid.Row textAlign='center'>
                             <Grid.Column width='4'></Grid.Column>
                                 <Grid.Column width='8'>
-                                    <Button primary onClick={this.onSubmit}>Submit</Button>
+                                    <Button inverted primary onClick={this.onSubmit}>Submit</Button>
                                 </Grid.Column>
                             <Grid.Column width='4'></Grid.Column>
                             </Grid.Row>

@@ -66,6 +66,7 @@ class SegmentExampleRaisedSegments extends React.Component{
                     <Grid.Column width={8}>
                     <Segment.Group raised>
                         <Header textAlign='center' size='huge'>Token Transfer</Header>
+                        <Divider></Divider>
                         <Grid>
                             <Grid.Row >
                                 <Grid.Column width={2}></Grid.Column>
@@ -74,7 +75,7 @@ class SegmentExampleRaisedSegments extends React.Component{
                                     <Header textAlign='center' size='small'>Net Token Balance : {this.state.tokenBnc} Eth</Header>
                                     <Input style={{margin:'10px'}} fluid placeholder='Sale contract Address' onChange={(e)=>this.handleChangesale('address',e)} />
                                     <Input style={{margin:'10px'}} fluid placeholder='Number of Tokens' onChange={(e)=>this.handleChangesale('number',e)} />
-                                    <Button style={{margin:'10px'}} onClick={this.onSubmitToSale} secondary inverted>Make Transaction</Button>
+                                    <Button style={{margin:'10px'}} onClick={this.onSubmitToSale} primary inverted>Make Transaction</Button>
                                 </Grid.Column>
                                 <Grid.Column width={2}></Grid.Column>
                             </Grid.Row>
@@ -88,7 +89,7 @@ class SegmentExampleRaisedSegments extends React.Component{
                                     <Header textAlign='center' size='small'>Net Token Balance in sale : {this.state.tokenBncSale} Eth</Header>
                                     <Input style={{margin:'10px'}} fluid placeholder='Industry contract Address' onChange={(e)=>this.handleChangeindustry('address',e)} />
                                     <Input style={{margin:'10px'}} fluid placeholder='Number of Tokens' onChange={(e)=>this.handleChangeindustry('number',e)} />
-                                    <Button style={{margin:'10px'}} onClick={this.onSubmitToIndustry} secondary inverted>Make Transaction</Button>
+                                    <Button style={{margin:'10px'}} onClick={this.onSubmitToIndustry} primary inverted>Make Transaction</Button>
                                     <Button style={{margin:'10px'}} onClick={this.onSubmitDestroy} secondary inverted>Destroy Remaining</Button>
                                 </Grid.Column>
                                 <Grid.Column width={2}></Grid.Column>
