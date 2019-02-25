@@ -72,7 +72,7 @@ class SegmentExampleRaisedSegments extends React.Component{
                                 <Grid.Column width={2}></Grid.Column>
                                 <Grid.Column width={12} textAlign='center'>
                                     <Header textAlign='center' size='large'>Transfer token to sale</Header>
-                                    <Header textAlign='center' size='small'>Net Token Balance : {this.state.tokenBnc} Eth</Header>
+                                    <Header textAlign='center' size='small'>Net Token Balance : {this.state.tokenBnc} WRC</Header>
                                     <Input style={{margin:'10px'}} fluid placeholder='Sale contract Address' onChange={(e)=>this.handleChangesale('address',e)} />
                                     <Input style={{margin:'10px'}} fluid placeholder='Number of Tokens' onChange={(e)=>this.handleChangesale('number',e)} />
                                     <Button style={{margin:'10px'}} onClick={this.onSubmitToSale} primary inverted>Make Transaction</Button>
@@ -86,7 +86,7 @@ class SegmentExampleRaisedSegments extends React.Component{
                                 <Grid.Column width={2}></Grid.Column>
                                 <Grid.Column width={12} textAlign='center'>
                                     <Header textAlign='center' size='large'>Transfer token to industry</Header>
-                                    <Header textAlign='center' size='small'>Net Token Balance in sale : {this.state.tokenBncSale} Eth</Header>
+                                    <Header textAlign='center' size='small'>Net Token Balance in sale : {this.state.tokenBncSale} WRC</Header>
                                     <Input style={{margin:'10px'}} fluid placeholder='Industry contract Address' onChange={(e)=>this.handleChangeindustry('address',e)} />
                                     <Input style={{margin:'10px'}} fluid placeholder='Number of Tokens' onChange={(e)=>this.handleChangeindustry('number',e)} />
                                     <Button style={{margin:'10px'}} onClick={this.onSubmitToIndustry} primary inverted>Make Transaction</Button>
