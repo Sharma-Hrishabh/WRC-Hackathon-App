@@ -4,12 +4,20 @@ const App =require('../connection/app');
 
 class SegmentExampleRaisedSegments extends React.Component{
 
-    state = {value:'1'}
+    state = {value:'1',inpValue:0}
 
     handleChange = (e, { value }) => this.setState({ value })
 
     onSubmit = () => {
-
+        if(this.state.value==1){
+            this.setState({inpValue:'234'})
+        }
+        if(this.state.value==2){
+            this.setState({inpValue:'334 L'})
+        }
+        if(this.state.value==3){
+            this.setState({inpValue:'235'})
+        }
 
     }
 
@@ -66,7 +74,7 @@ class SegmentExampleRaisedSegments extends React.Component{
                             <Grid.Row textAlign='center'>
                             <Grid.Column width='4'></Grid.Column>
                                 <Grid.Column width='8'>
-                                    <Input placeholder='Maximum Acceptable Volume' fluid />
+                                    <Input value={this.state.inpValue} placeholder='Maximum Acceptable Volume' fluid />
                                 </Grid.Column>
                             <Grid.Column width='4'></Grid.Column>
                             </Grid.Row>

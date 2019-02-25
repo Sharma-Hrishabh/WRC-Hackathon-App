@@ -8,7 +8,8 @@ class SegmentExampleRaisedSegments extends React.Component{
         sale:{},
         industry:{},
         tokenBnc:0,
-        tokenBncSale:0
+        tokenBncSale:0,
+        address:0
       }
 
       componentDidMount(){
@@ -65,16 +66,16 @@ class SegmentExampleRaisedSegments extends React.Component{
                     <Grid.Column width={4}></Grid.Column>
                     <Grid.Column width={8}>
                     <Segment.Group raised>
-                        <Header textAlign='center' size='huge'>Token Transfer</Header>
+                        <Header textAlign='center' size='huge'>Token Transfer for Industry</Header>
+                        <Header textAlign='center' size='large'>Address : {this.state.address}</Header>
+                        <Header textAlign='center' size='small'>Net Token Balance : {this.state.tokenBncSale} WRC</Header>
                         <Divider></Divider>
                         <Grid>
                             <Grid.Row >
                                 <Grid.Column width={2}></Grid.Column>
                                 <Grid.Column width={12} textAlign='center'>
                                     <Header textAlign='center' size='large'>Transfer token to sale</Header>
-                                    <Header textAlign='center' size='small'>Net Token Balance : {this.state.tokenBnc} WRC</Header>
-                                    <Input style={{margin:'10px'}} fluid placeholder='Sale contract Address' onChange={(e)=>this.handleChangesale('address',e)} />
-                                    <Input style={{margin:'10px'}} fluid placeholder='Number of Tokens' onChange={(e)=>this.handleChangesale('number',e)} />
+                                    <Input style={{margin:'10px'}} fluid placeholder='Tokens to Transfer' onChange={(e)=>this.handleChangesale('address',e)} />
                                     <Button style={{margin:'10px'}} onClick={this.onSubmitToSale} primary inverted>Make Transaction</Button>
                                 </Grid.Column>
                                 <Grid.Column width={2}></Grid.Column>
@@ -85,12 +86,10 @@ class SegmentExampleRaisedSegments extends React.Component{
                             <Grid.Row>
                                 <Grid.Column width={2}></Grid.Column>
                                 <Grid.Column width={12} textAlign='center'>
-                                    <Header textAlign='center' size='large'>Transfer token to industry</Header>
-                                    <Header textAlign='center' size='small'>Net Token Balance in sale : {this.state.tokenBncSale} WRC</Header>
-                                    <Input style={{margin:'10px'}} fluid placeholder='Industry contract Address' onChange={(e)=>this.handleChangeindustry('address',e)} />
-                                    <Input style={{margin:'10px'}} fluid placeholder='Number of Tokens' onChange={(e)=>this.handleChangeindustry('number',e)} />
+                                    <Header textAlign='center' size='large'>Buy Tokens</Header>
+                                    <Input style={{margin:'10px'}} fluid placeholder='Tokens to buy' onChange={(e)=>this.handleChangeindustry('number',e)} />
                                     <Button style={{margin:'10px'}} onClick={this.onSubmitToIndustry} primary inverted>Make Transaction</Button>
-                                    <Button style={{margin:'10px'}} onClick={this.onSubmitDestroy} secondary inverted>Destroy Remaining</Button>
+                                    <Button style={{margin:'10px'}} onClick={this.onSubmitDestroy} secondary inverted>Surrender</Button>
                                 </Grid.Column>
                                 <Grid.Column width={2}></Grid.Column>
                             </Grid.Row>
