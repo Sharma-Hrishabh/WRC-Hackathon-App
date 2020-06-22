@@ -21,7 +21,7 @@
 -   Securing the WRC issuance and trading mechanisms
     
 
-  *****Technichal Architecture*****
+  *****Technical Architecture*****
 
 -   Preventing unauthorised meters from reporting data into Blockchain  
     A smart contract is created to store unique device address on the blockchain. Only the regulator can add IOT devices to the blockchain..
